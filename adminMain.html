@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/adminMain.css">
+  <script src="./assets/js/admin.js" defer></script>
+  <script src="./assets/js/addBook.js" type="module" defer></script>
+  <script src="./assets/js/contactUs.js" type="module" defer></script>
+  <script src="./assets/js/JoinUs.js" type="module" defer></script>
+  <script src="./assets/js/aboutStore.js" type="module" defer></script>
+  <script src="./assets/js/bookapi.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo_div">
+      <div>
+        <img src="./assets/image/imageRed.png" alt="logo" />
+        <div class="logo_title">
+          <h1>LIBRARY</h1>
+          <hr />
+          <p>book store</p>
+        </div>
+      </div>
+      
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+      <div class="div_head">
+        <div class="div1">
+          <img class="books" src="./assets/image/books-stack-of-three 2.png">
+        <div class="div_head_div">
+          <p class="p_library">LIBRARY</p>
+          <div class="line"></div>
+          <p class="p_admin">Admin Panel</p>
+        </div>
+        </div>
+        <div class="exit">
+          <button id="exitBtn"><img src="./assets/image/X.png" alt=""></button>
+        </div>
+      </div>
+      <div  id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <img class="img_3books" src="./assets/image/books-stack-of-three 2 (3).png" alt="">
+            <a class="nav-link" href="#">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <img class="img_3books" src="./assets/image/books-stack-of-three 2 (3).png" alt="">
+            <a class="nav-link" onclick="link()" href="#home">Books</a>
+          </li>
+          <li class="nav-item">
+            <img class="img_3books" src="./assets/image/books-stack-of-three 2 (3).png" alt="">
+            <a class="nav-link" onclick="link()"  href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <img class="img_3books" src="./assets/image/books-stack-of-three 2 (3).png" alt="">
+            <a class="nav-link" onclick="link()" href="#tablesec1">Join Us</a>
+          </li>
+          <li class="nav-item">
+            <img class="img_3books" src="./assets/image/books-stack-of-three 2 (3).png" alt="">
+            <a class="nav-link" onclick="link()" href="#tablesec3">Contact</a>
+          </li>
+          <li class="nav-item">
+            <img class="img_3books" src="./assets/image/books-stack-of-three 2 (3).png" alt="">
+            <a class="nav-link" id="logout" href="../admin/admin_login.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="div_img2">
+      <button id="hamburger"><img src="./assets/image/hamburger.png" alt=""></button>
+    </div>
+  </header>
+  <div class="extra"></div>
+  <main>
+    <section class="section1" id="home">
+      <div class="div_img">
+        <img id="person" src="./assets/image/akar-icons_heart.png">
+        <p class="admin">Admin</p>
+      </div>
+      <h1 class="h1_admin">Add book</h1>
+      <div class="div_search">
+        <h2 class="h2_search">Search book</h2>
+        <div class="book_name">
+          <input class="input_book" type="search" placeholder="Dan Brown">
+          <button class="button_book"><img src="./assets/image/Group 244.png"></button>
+        </div>
+        <div class="last_search">
+          <!-- <div class="clock1">
+            <img src="../assets/image/clock.png" alt="">
+            <p>Dan Brown Davinc</p>
+          </div>
+          <div class="clock2">
+            <img src="../assets/image/clock.png" alt="">
+            <p>Dan Brown Angel</p>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <section class="section2">
+      <h2>Book form</h2>
+      <form>
+        <div class="book_Info">
+          <label for="book_name">Book Name</label>
+          <input type="text" id="book_name" placeholder="Enter book name" >
+        </div>
+        <div class="book_Info">
+          <label for="Author_name">Author Name</label>
+          <input type="text" id="Author_name" placeholder="Enter book author name" >
+        </div>
+        <div class="book_Info">
+          <label for="url">Book Image Url</label>
+          <input type="url" id="url" placeholder="Enter book img URL">
+        </div>
+        <div id="descriptionDiv">
+          <label for="description">Description</label>
+          <textarea name="description" id="description" cols="30"
+            rows="10" placeholder="Enter book description"></textarea>
+        </div>
+        <div  >
+          <label for="book_type">Book Type</label>
+          <div class="bookTypeDiv">
+            <select id="book_type">
+              <option >Fantastic</option>
+              <option >Drama</option>
+              <option >Dedektiv</option>
+              <option >Child</option>
+              <option >Fəlsəfə</option>
+              <option >History</option>
+              <option >Fiction</option>
+          </select>      
+          <p class="bookTypeP">+</p>
+          </div>
+          <div class="addOption">
+            <input placeholder="enter new option" id="newOptionInp" type="text">
+            <button class="addOptionBtn">add</button>
+            <p class="exitOption">X</p>
+          </div>
+       </div>
+       <div class="check">
+        <input id="checkbox" type="checkbox">
+        <p>New</p>
+        <input id="date" placeholder="date" type="number">
+       </div>
+       <div class="check">
+        <input id="checkbox2" type="checkbox">
+        <p>Besteller</p>
+       </div>
+        <button id="addBookBtn">Add</button>
+      </form>
+    </section>
+    <section class="section3" id="about">
+      <h2>About Store</h2>
+      <form>
+        <div class="book_Info">
+          <label for="title">Title</label>
+          <input type="text" id="title" placeholder="About Store">
+        </div>
+        <div class="book_Info">
+          <label for="imageUrl">Book Image Url</label>
+          <input type="text" id="imageUrl" placeholder="https://image:url/">
+        </div>
+        <div class="book_Info">
+          <label for="descriptionStore">Description</label>
+          <input type="text" id="descriptionStore"
+            placeholder="  We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...">
+        </div>
+        <button id="add2">Add</button>
+      </form>
+    </section>
+    <section id="tablesec1">
+      <div>
+          <h2>Join Us</h2>
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th id="th1" scope="col">Fullname</th>
+              <th id="th2" scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody class="tJoinUs">
+            <!-- <tr>
+              <th >1</th>
+              <td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+              <td>Otto</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+</section>
+<section id="tablesec2">
+  <div>
+      <h2>Books</h2>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th id="th1" scope="col">Title</th>
+          <th id="th2" scope="col">Description</th>
+          <th id="th2" scope="col">Category</th>
+          <th id="th2" scope="col">Author</th>
+        </tr>
+      </thead>
+      <tbody class="books_table">
+        <!-- <tr>
+          <th >1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <th id="th2" scope="col">Last</th>
+          <th id="th2" scope="col">Last</th>
+        </tr> -->
+       
+
+      </tbody>
+    </table>
+  </div>
+</section>
+<section id="tablesec3">
+  <div>
+      <h2>Contact Us</h2>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th id="th1" scope="col">Fullname</th>
+          <th id="th2" scope="col">Adress</th>
+          <th id="th2" scope="col">Email Adress</th>
+          <th id="th2" scope="col">Phone Number</th>
+        </tr>
+      </thead>
+      <tbody class="tContact">
+        <!-- <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <th id="th2" scope="col">Last</th>
+          <th id="th2" scope="col">Last</th>
+        </tr> -->
+
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="section4">
+  <p>succesful</p>
+</section>
+  </main>
+</body>
+
+</html>
